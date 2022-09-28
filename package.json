@@ -1,0 +1,19 @@
+{
+  "name": "vitrineempreende",
+  "version": "1.0.0",
+  "description": "Repositório dedicado ao projeto desenvolvido na matéria de Projeto Integrado I, 2022.2, do curso de Sistemas e Mídias Digitais.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joicenunes/VitrineEmpreende.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/joicenunes/VitrineEmpreende/issues"
+  },
+  "homepage": "https://github.com/joicenunes/VitrineEmpreende#readme"
+}
