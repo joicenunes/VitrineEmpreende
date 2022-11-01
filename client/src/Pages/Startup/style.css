@@ -1,0 +1,90 @@
+.App-startup {
+  color: inherit;
+}
+
+.App-header {
+  width: 100%;
+  height: 76px;
+  background-color: #fff;
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  grid-template-areas: "logotipo . actions";
+  position: absolute;
+  border-bottom: 2px solid #EBEBEB;
+}
+
+.App-logotipo {
+  width: 160px;
+  height: 40px;
+  line-height: 40px;
+  background-color: #DFE2E9;
+  text-align: center;
+  grid-area: logotipo;
+  margin: 18px 15px;
+}
+
+.App-actions {
+  grid-area: actions;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  position: relative;
+}
+
+.App-actions .Form-item {
+  margin: -10px 0;
+}
+
+.App-avatar {
+  margin: 18px 0;
+  position: absolute;
+  right: 15px;
+  /* top: 50%; */
+  /* margin: -25px 0 0 -25px; */
+}
+
+.App-content {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-areas:
+    ". basics basics basics info info info info info info info .";
+  padding-top: 80px;
+}
+
+.App-startup-profile {
+  grid-area: basics;
+  text-align: center;
+}
+
+.App-startup-name {
+  font-size: 28px;
+}
+
+.App-startup-contact {
+  font-size: 13px;
+  margin: 8px 0;
+}
+
+.App-startup-cards {
+  grid-area: info;
+}
+
+.App-startup-avatar-border {
+  margin: 0 auto;
+  box-sizing: border-box;
+  height: 170px;
+  width: 170px;
+  border-radius: 170px;
+  border: 4px solid #9EA5B7;
+  background-color: #fff;
+  padding: 8px;
+}
+
+.App-statup-avatar-img {
+  box-sizing: border-box;
+  color: #fff;
+  height: 146px;
+  width: 146px;
+  border-radius: 146px;
+  background-color: #9EA5B7;
+  padding: 23px;
+}

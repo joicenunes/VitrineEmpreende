@@ -1,0 +1,20 @@
+.App-avatar {
+  box-sizing: border-box;
+  width: 40px;
+  height: 40px;
+  border-radius: 40px;
+  background-color: #fff;
+  border: 1px solid #9EA5B7;
+  padding: 2px;
+  overflow: hidden;
+}
+
+.App-initials {
+  text-align: center;
+  line-height: 34px;
+  background-color: #9EA5B7;
+  color: #fff;
+  border-radius: 40px;
+  width: 34px;
+  height: 34px;
+}
