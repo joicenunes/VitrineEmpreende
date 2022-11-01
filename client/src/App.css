@@ -1,50 +1,7 @@
 .App {
-  color: #9ea5b7;
-  display: grid;
-  grid-template-columns: 3fr 2fr;
-  width: 100%;
-  height: 100vh;
-  text-align: center;
-}
-
-.App-login-image {
-  background: url(../public/ft_condominio.png);
-}
-
-.App-login-form {
-  padding: 60px 40px 25px;
-  background-color: #f7f7f7;
-}
-
-.Form-item {
-  margin: 30px 0;
-  text-align: left;
-}
-
-.Form-item label {
-  font-weight: bold;
-}
-
-.Form-item-field {
-  display: grid;
-  grid-template-columns: 20px auto;
-  padding: 10px;
-  margin: 6px 1px;
-  background-color: #fff;
-  border-radius: 5px;
-  box-shadow: 0 1px 3px 0 #d5d8e2;
-}
-
-.Form-item-icon {
-  padding: 2px;
-}
-
-.Form-item-field input {
-  border: none;
-}
-
-.Form-item-field input:active, .Form-item-field input:focus {
-  border: none;
+  width: 100vw;
+  height: 100vh;;
+  color: #9ea5b7 !important;
 }
 
 .Form-button button {
@@ -63,28 +20,12 @@
   color: inherit;
 }
 
-.App-logo {
+/* .App-logo {
   height: 15vmin;
   pointer-events: none;
-}
+} */
 
-@media screen and (max-width: 800px) {
-  .App-login-image {
-    display:none;
-  }
-
-  .App-login-form {
-    width: 100%;
-  }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
+/* .App-header {
   background-color: #282c34;
   min-height: 100vh;
   display: flex;
@@ -93,17 +34,8 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
-}
+} */
 
 .App-link {
   color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
 }
