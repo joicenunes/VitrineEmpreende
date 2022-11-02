@@ -1,7 +1,7 @@
 import React from "react";
 import './style.css';
 
-export default function Avatar(props) {  
+export default function Avatar(props) {
   function getInitials() {
     let names = props.name.split(' ');
     const last_name_index = names.length - 1;
