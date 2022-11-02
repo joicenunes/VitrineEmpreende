@@ -69,7 +69,7 @@
 }
 
 .App-startup-avatar-border {
-  margin: 0 auto;
+  margin: 0 auto 16px;
   box-sizing: border-box;
   height: 170px;
   width: 170px;
