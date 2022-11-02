@@ -1,6 +1,6 @@
 import React/* , { useState } */ from 'react';
 
-import { HiMagnifyingGlass, HiOutlinePhoto,  } from 'react-icons/hi2';
+import { HiMagnifyingGlass, HiOutlinePhoto } from 'react-icons/hi2';
 import { RiLinkedinBoxLine, RiTwitterLine, RiGithubLine } from 'react-icons/ri';
 
 import './style.css';
@@ -8,19 +8,39 @@ import './style.css';
 import Avatar from '../../Components/Avatar';
 import { Card, CardBody, CardTitle } from '../../Components/Card';
 import InputText from '../../Components/InputText';
+import TagList from '../../Components/TagList';
 
 export default function Startup() {
   const startupPhoto = null;
   const startup = {
     name: "Mock Startup"
   }
+  const startupTags = "Maecenas tincidunt, lacus eget faucibus bibendum, erat purus sodales purus, quis interdum turpis turpis vitae augue. Sed fermentum libero in est blandit congue. Donec nec lectus vitae metus euismod tempor. Curabitur maximus mollis sapien. Donec ut arcu tempus, pulvinar magna at, tincidunt magna. Fusce ut porttitor erat. Nunc malesuada nisi ac risus tristique condimentum.".split(' ');
+
+  function showStartupPhoto() {
+    return startupPhoto ?
+      <img
+        src={startupPhoto}
+        alt={startup.name}
+      /> :
+      <HiOutlinePhoto
+        size={100}
+      />;
+  }
 
   return (
     <div className="App-startup">
       <div className="App-header">
-        <div className='App-logotipo'>LOGOTIPO</div>
+        <div className='App-logotipo'>
+          LOGOTIPO
+        </div>
         <div className="App-actions">
-          <InputText id="username" icon={HiMagnifyingGlass} noBorder placeholder="Buscar startup" />
+          <InputText
+            id="username"
+            icon={HiMagnifyingGlass}
+            noBorder
+            placeholder="Buscar startup"
+          />
           <Avatar name={"Joice Nunes"} />
         </div>
       </div>
@@ -30,16 +50,17 @@ export default function Startup() {
             <CardBody>
               <div className='App-startup-avatar-border'>
                 <div className='App-statup-avatar-img'>
-                  {startupPhoto ?
-                    <img src={startupPhoto} alt={startup.name} /> : <HiOutlinePhoto size={100} />}
+                  {showStartupPhoto()}
                 </div>
               </div>
               <div className='App-startup-name'>
                 Startup Name
               </div>
-              <div className='App-startup-contact'>startup@gmail.com</div>
+              <div className='App-startup-contact'>
+                startup@gmail.com
+              </div>
               <div className='App-startup-social-network'>
-                <RiLinkedinBoxLine/> <RiTwitterLine/> <RiGithubLine/>
+                <RiLinkedinBoxLine /> <RiTwitterLine /> <RiGithubLine />
               </div>
             </CardBody>
           </Card>
@@ -52,14 +73,14 @@ export default function Startup() {
             <CardBody>
               Maecenas tincidunt, lacus eget faucibus bibendum, erat purus sodales purus, quis interdum turpis turpis vitae augue. Sed fermentum libero in est blandit congue. Donec nec lectus vitae metus euismod tempor. Curabitur maximus mollis sapien. Donec ut arcu tempus, pulvinar magna at, tincidunt magna. Fusce ut porttitor erat. Nunc malesuada nisi ac risus tristique condimentum.
             </CardBody>
-
           </Card>
+
           <Card>
             <CardTitle>
               Areas de atuação
             </CardTitle>
             <CardBody>
-
+              <TagList tags={startupTags} />
             </CardBody>
           </Card>
         </div>
