@@ -1,11 +1,14 @@
 import React, { /* useEffect, */ useEffect, useState } from 'react';
-import './style.css'
-
-import Header from '../../Components/Header';
-import StartupProfile from '../../Components/StartupProfile';
-import Pagination from '../../Components/Pagination';
+import './style.css';
 
 import startupList from './mock';
+
+import { MdSearch } from 'react-icons/md';
+import Button from '../../Components/Button';
+import Header from '../../Components/Header';
+import InputText from '../../Components/InputText';
+import Pagination from '../../Components/Pagination';
+import StartupProfile from '../../Components/StartupProfile';
 
 export default function Vitrine() {
   const list = startupList;
@@ -45,10 +48,28 @@ export default function Vitrine() {
     <div>
       <Header />
       <div className='page-content'>
+        <div className='filtros'>
+          <InputText
+            color='primary'
+            id='search'
+            placeholder='Nome da startup'
+            icon={MdSearch}
+          />
+          <Button
+            color='primary'
+          >Todos</Button>
+          <Button
+            color='primary'
+          >Spin-offs</Button>
+          <Button
+            color='primary'
+          >Startups</Button>
+        </div>
+
         <div className='vitrine'>
           {showStartups()}
         </div>
-        
+
         <Pagination
           totalPages={Math.floor(list.length / pageSize)}
           maxButtonsVisible={5}
