@@ -1,88 +1,47 @@
 import React/* , { useState } */ from 'react';
 
-import { HiMagnifyingGlass, HiOutlinePhoto } from 'react-icons/hi2';
-import { RiLinkedinBoxLine, RiTwitterLine, RiGithubLine } from 'react-icons/ri';
-
 import './style.css';
 
-import Avatar from '../../Components/Avatar';
 import { Card, CardBody, CardTitle } from '../../Components/Card';
-import InputText from '../../Components/InputText';
+import Header from '../../Components/Header';
 import TagList from '../../Components/TagList';
+import StartupProfile from '../../Components/StartupProfile';
 
 export default function Startup() {
-  const startupPhoto = null;
+  
   const startup = {
-    name: "Mock Startup"
-  }
-  const startupTags = "Maecenas tincidunt, lacus eget faucibus bibendum, erat purus sodales purus, quis interdum turpis turpis vitae augue. Sed fermentum libero in est blandit congue. Donec nec lectus vitae metus euismod tempor. Curabitur maximus mollis sapien. Donec ut arcu tempus, pulvinar magna at, tincidunt magna. Fusce ut porttitor erat. Nunc malesuada nisi ac risus tristique condimentum.".split(' ');
-
-  function showStartupPhoto() {
-    return startupPhoto ?
-      <img
-        src={startupPhoto}
-        alt={startup.name}
-      /> :
-      <HiOutlinePhoto
-        size={100}
-      />;
-  }
+    id: 1,
+    img: null,
+    name: "Startup Exemplo",
+    email: "startup@exemplo.com",
+    tags: "Maecenas tincidunt, lacus eget faucibus bibendum, erat purus sodales purus, quis interdum turpis turpis vitae augue. Sed fermentum libero in est blandit congue. Donec nec lectus vitae metus euismod tempor. Curabitur maximus mollis sapien. Donec ut arcu tempus, pulvinar magna at, tincidunt magna. Fusce ut porttitor erat. Nunc malesuada nisi ac risus tristique condimentum.".split(' ')
+  };
 
   return (
-    <div className="App-startup">
-      <div className="App-header">
-        <div className='App-logotipo'>
-          LOGOTIPO
-        </div>
-        <div className="App-actions">
-          <InputText
-            id="username"
-            icon={HiMagnifyingGlass}
-            noBorder
-            placeholder="Buscar startup"
-          />
-          <Avatar name={"Joice Nunes"} />
-        </div>
-      </div>
-      <div className='App-content'>
-        <div className='App-startup-profile'>
-          <Card>
-            <CardBody>
-              <div className='App-startup-avatar-border'>
-                <div className='App-statup-avatar-img'>
-                  {showStartupPhoto()}
-                </div>
-              </div>
-              <div className='App-startup-name'>
-                Startup Name
-              </div>
-              <div className='App-startup-contact'>
-                startup@gmail.com
-              </div>
-              <div className='App-startup-social-network'>
-                <RiLinkedinBoxLine /> <RiTwitterLine /> <RiGithubLine />
-              </div>
-            </CardBody>
-          </Card>
-        </div>
-        <div className='App-startup-cards'>
-          <Card>
-            <CardTitle>
-              Sobre a equipe
-            </CardTitle>
-            <CardBody>
-              Maecenas tincidunt, lacus eget faucibus bibendum, erat purus sodales purus, quis interdum turpis turpis vitae augue. Sed fermentum libero in est blandit congue. Donec nec lectus vitae metus euismod tempor. Curabitur maximus mollis sapien. Donec ut arcu tempus, pulvinar magna at, tincidunt magna. Fusce ut porttitor erat. Nunc malesuada nisi ac risus tristique condimentum.
-            </CardBody>
-          </Card>
+    <div className='startup'>
+      <Header />
+      <div className='page-content'>
+        <div className='startup-info-wrap'>
+          <StartupProfile startup={startup} hiddenTags />
+          <div className='startup-cards'>
+            <Card>
+              <CardTitle>
+                Sobre a equipe
+              </CardTitle>
+              <CardBody>
+                Maecenas tincidunt, lacus eget faucibus bibendum, erat purus sodales purus, quis interdum turpis turpis vitae augue. Sed fermentum libero in est blandit congue. Donec nec lectus vitae metus euismod tempor. Curabitur maximus mollis sapien. Donec ut arcu tempus, pulvinar magna at, tincidunt magna. Fusce ut porttitor erat. Nunc malesuada nisi ac risus tristique condimentum.
+              </CardBody>
+            </Card>
 
-          <Card>
-            <CardTitle>
-              Areas de atuação
-            </CardTitle>
-            <CardBody>
-              <TagList tags={startupTags} />
-            </CardBody>
-          </Card>
+            <Card>
+              <CardTitle>
+                Areas de atuação
+              </CardTitle>
+              <CardBody>
+                <TagList tags={startup.tags} />
+              </CardBody>
+            </Card>
+          </div>
         </div>
       </div>
     </div>
