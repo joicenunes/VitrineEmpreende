@@ -1,18 +1,40 @@
 import React from "react";
 import './style.css';
 
-function Tag(props) {
+function Tag({ style, children }) {
   return (
-    <div className='tag'>
-      {props.children}
+    <div
+      className='tag'
+      style={style}
+    >
+      {children}
     </div>
   )
 }
 
 export default function TagList(props) {
+  const setTagStyle = (color) => {
+    let style = {};
+    switch (color) {
+      case 'primary':
+        style.backgroundColor = '#2EBEE5';
+        style.color = '#fff';
+        break;
+      default:
+        break;
+    }
+    console.log({style})
+    return style;
+  }
+
   const listTags = () => {
     return props.tags.length > 0 ?
-      props.tags.map((tag, i) => <Tag key={i}> {tag} </Tag>) :
+      props.tags.map((tag, i) =>
+        <Tag
+          key={i}
+          style={setTagStyle(props.color)}
+        > {tag} </Tag>
+      ) :
       <></>
   }
 

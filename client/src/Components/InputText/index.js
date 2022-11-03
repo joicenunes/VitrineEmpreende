@@ -12,6 +12,15 @@ export default function InputText(props) {
       <></>;
   }
 
+  const setColor = (color) => {
+    switch (color) {
+      case 'primary':
+        return '#2EBEE5';
+      default:
+        return; 
+    }
+  } 
+
   return (
     <div
       className='form-item'
@@ -20,7 +29,7 @@ export default function InputText(props) {
       {showLabel()}
       <br />
       <div className={`form-item-field ${props.noBorder ? 'no-border' : 'border'}`}>
-        {React.createElement(props.icon, { className: 'form-item-icon' })}
+        {React.createElement(props.icon, { className: 'form-item-icon', color: setColor(props.color), size: 18 })}
         <input
           id={props.id}
           name={props.id}

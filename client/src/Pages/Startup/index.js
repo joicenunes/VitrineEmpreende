@@ -22,10 +22,10 @@ export default function Startup() {
       <Header />
       <div className='page-content'>
         <div className='startup-info-wrap'>
-          <StartupProfile startup={startup} hiddenTags />
+          <StartupProfile color='primary' startup={startup} hiddenTags />
           <div className='startup-cards'>
             <Card>
-              <CardTitle>
+              <CardTitle color='primary'>
                 Sobre a equipe
               </CardTitle>
               <CardBody>
@@ -34,11 +34,11 @@ export default function Startup() {
             </Card>
 
             <Card>
-              <CardTitle>
+              <CardTitle color='primary'>
                 Areas de atuação
               </CardTitle>
               <CardBody>
-                <TagList tags={startup.tags} />
+                <TagList color='primary' tags={startup.tags} />
               </CardBody>
             </Card>
           </div>
