@@ -11,10 +11,14 @@ export default function Header(props) {
         LOGOTIPO
       </div>
       <div className='actions'>
-        <div className='link'>
+        <div className='search-startup'>
           <Link to='/vitrine'>Buscar startup</Link>
         </div>
-        <Avatar name={'Joice Nunes'} />
+        <div className='user-avatar'>
+          <Link to='/startup'>
+            <Avatar name={'Joice Nunes'} />
+          </Link>
+        </div>
       </div>
     </header>
   );
