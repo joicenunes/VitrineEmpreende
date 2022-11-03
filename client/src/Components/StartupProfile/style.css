@@ -1,8 +1,9 @@
 .startup-profile {
+  position: relative;
   text-align: center;
 }
 
-.startup-avatar-border {
+.startup-avatar {
   margin: 0 auto 16px;
   box-sizing: border-box;
   height: 170px;
@@ -26,4 +27,35 @@
 
 .startup-tags {
   overflow: hidden;
+}
+
+.startup-actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.startup-description {
+  background-color: #E0E0E0;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.04), 0px 0px 2px rgba(0, 0, 0, 0.06), 0px 0px 1px rgba(0, 0, 0, 0.04);
+  border-radius: 10px;
+  padding: 60px 20px 20px;
+  margin: -50px 8px 8px;
+  text-align: left;
+  
+  box-sizing: border-box;
+  max-width: 380px;
+  max-height: 240px;
+
+  position: relative;
+  z-index: -1;
+
+}
+
+.startup-description p {
+  overflow: hidden;
+  margin: 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 8;
+  -webkit-box-orient: vertical;  
 }

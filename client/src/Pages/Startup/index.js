@@ -12,9 +12,9 @@ export default function Startup() {
   const startup = {
     id: 1,
     img: null,
-    name: "Startup Exemplo",
-    email: "startup@exemplo.com",
-    tags: "Maecenas tincidunt, lacus eget faucibus bibendum, erat purus sodales purus, quis interdum turpis turpis vitae augue. Sed fermentum libero in est blandit congue. Donec nec lectus vitae metus euismod tempor. Curabitur maximus mollis sapien. Donec ut arcu tempus, pulvinar magna at, tincidunt magna. Fusce ut porttitor erat. Nunc malesuada nisi ac risus tristique condimentum.".split(' ')
+    name: 'Startup Exemplo',
+    email: 'startup@exemplo.com',
+    tags: 'Maecenas tincidunt, lacus eget faucibus bibendum, erat purus sodales purus, quis interdum turpis turpis vitae augue.'.split(' ')
   };
 
   return (
@@ -22,7 +22,7 @@ export default function Startup() {
       <Header />
       <div className='page-content'>
         <div className='startup-info-wrap'>
-          <StartupProfile color='primary' startup={startup} hiddenTags />
+          <StartupProfile color='primary' startup={startup} hiddenTags hiddenDescription hiddenButtons />
           <div className='startup-cards'>
             <Card>
               <CardTitle color='primary'>

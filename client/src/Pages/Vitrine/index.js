@@ -28,7 +28,11 @@ export default function Vitrine() {
     return (
       <div key={startup.id} className='startup-card'>
         <div className='startup-card-content'>
-          <StartupProfile startup={startup} hiddenSocialNetwork hiddenTags />
+          <StartupProfile
+            startup={startup}
+            hiddenSocialNetwork
+            hiddenTags
+          />
         </div>
       </div>
     );
