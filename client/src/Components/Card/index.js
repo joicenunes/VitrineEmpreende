@@ -3,7 +3,7 @@ import './style.css';
 
 function CardTitle(props) {
   return (
-    <div className="App-card-title">
+    <div className='card-title'>
       {props.children}
     </div>
   );
@@ -11,7 +11,7 @@ function CardTitle(props) {
 
 function CardBody(props) {
   return (
-    <div className="App-card-body">
+    <div className='card-body'>
       {props.children}
     </div>
   );
@@ -19,7 +19,7 @@ function CardBody(props) {
 
 function Card(props) {
   return (
-    <div className="App-card">
+    <div className='card'>
       {props.children}
     </div>
   );

@@ -15,7 +15,7 @@ export default function Logon() {
 
   //   const history = useHistory();
 
-  async function handleLogin(evt) {
+  const handleLogin = async (evt) => {
     evt.preventDefault();
 
     // try {
@@ -30,37 +30,37 @@ export default function Logon() {
   }
 
   return (
-    <div className="App-login">
-      <div className="App-login-image">
+    <div className='login'>
+      <div className='login-image'>
         <img
           src={empreendeImg}
           alt='Empreende UFC'
         />
       </div>
-      <div className='App-login-form'>
+      <div className='login-form'>
         <form
           onSubmit={handleLogin}
-          className="App-form"
-          alt="login-form"
+          className='form'
+          alt='login-form'
         >
-          {/* <img src={logo} className="App-logo" alt="logo" /> */}
+          {/* <img src={logo} className='logo' alt='logo' /> */}
           <p>
             <strong>Bem-vindo(a)!</strong>
           </p>
           <p>Entre com seu usuário e senha para acessar o sistema.</p>
-          <div className="App-login-fields">
+          <div className='login-fields'>
             <InputText
-              id="username"
-              label="Usuário *"
+              id='username'
+              label='Usuário *'
               icon={HiOutlineUserCircle}
             />
             <InputText
-              id="password"
-              label="Senha *"
+              id='password'
+              label='Senha *'
               icon={HiOutlineKey}
             />
           </div>
-          <div className="Form-button">
+          <div className='form-button'>
             <button
               className='button'
               type='submit'
@@ -68,20 +68,19 @@ export default function Logon() {
               Entrar
             </button>
           </div>
-          <div className="Form-links">
+          <div className='form-links'>
             <p>
               <Link
-                className="App-login-link"
-                to="/forgotpassword"
+                className='login-link'
+                to='/forgotpassword'
               >
                 Esqueceu a senha?
               </Link>
             </p>
             <p>
-              Não possui uma conta?
-              <Link
-                className='App-login-link'
-                to="/register"
+              Não possui uma conta? <Link
+                className='login-link'
+                to='/register'
               >
                 Criar uma.
               </Link>

@@ -1,10 +1,17 @@
-.App {
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+
+.app {
   width: 100vw;
   height: 100vh;;
   color: #9ea5b7 !important;
+  font-family: 'Montserrat', sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 16px;
 }
 
-.Form-button button {
+.form-button button {
   border: none;
   outline: none;
   background-color: #9ea5b7;
@@ -16,16 +23,16 @@
   border-radius: 35px;
 }
 
-.Form-links a {
+.form-links a {
   color: inherit;
 }
 
-/* .App-logo {
+/* .logo {
   height: 15vmin;
   pointer-events: none;
 } */
 
-/* .App-header {
+/* .header {
   background-color: #282c34;
   min-height: 100vh;
   display: flex;
@@ -36,6 +43,16 @@
   color: white;
 } */
 
-.App-link {
-  color: #61dafb;
+a {
+  color: inherit;
+}
+
+.page-content {
+  background-color: #F7F7F7;
+  padding-top: 80px;
+}
+
+.clickable-icon {
+  margin: 0 5px;
+  cursor: pointer;
 }

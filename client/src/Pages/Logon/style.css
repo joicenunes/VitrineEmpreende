@@ -1,4 +1,4 @@
-.App-login {
+.login {
   display: grid;
   grid-template-columns: 3fr 2fr;
   width: 100%;
@@ -7,25 +7,25 @@
   overflow: hidden;
 }
 
-.App-login img {
+.login img {
   height: 100%;
 }
 
-.App-login-form {
+.login-form {
   padding: 60px 40px 25px;
   background-color: #f7f7f7;
 }
 
-.App-login-fields .Form-item {
+.login-fields .form-item {
   margin: 30px 0;
 }
 
 @media screen and (max-width: 1024px) {
-  .App-login-image {
+  .login-image {
     display:none;
   }
 
-  .App-login-form {
+  .login-form {
     width: 100%;
   }
 }

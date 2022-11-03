@@ -1,39 +1,39 @@
-.Form-item {
+.form-item {
   margin: 0;
   text-align: left;
 }
 
-.Form-item label {
+.form-item label {
   font-weight: bold;
 }
 
-.Form-item-field {
+.form-item-field {
   display: grid;
   grid-template-columns: 20px auto;
   padding: 10px;
   margin: 6px 1px;
 }
 
-.Border {
+.border {
   background-color: #fff;
   border-radius: 5px;
   box-shadow: 0 1px 3px 0 #d5d8e2;
 }
 
-.No-border {
+.no-border {
   border-bottom: 1px solid #d5d8e2;
 }
 
-.Form-item-icon {
+.form-item-icon {
   padding: 2px;
 }
 
-.Form-item-field input {
+.form-item-field input {
   padding-left: 5px;
   border: none;
 }
 
-.Form-item-field input:focus {
+.form-item-field input:focus {
   border: none;
   outline: none;
 }

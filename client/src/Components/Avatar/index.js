@@ -2,7 +2,7 @@ import React from "react";
 import './style.css';
 
 export default function Avatar(props) {
-  function getInitials() {
+  const getInitials = () => {
     let names = props.name.split(' ');
     const last_name_index = names.length - 1;
     if (names.length > 1) {
@@ -11,8 +11,8 @@ export default function Avatar(props) {
   }
 
   return (
-    <div className="App-avatar">
-      <div className="App-initials">
+    <div className='avatar'>
+      <div className='initials'>
         {getInitials()}
       </div>
     </div>

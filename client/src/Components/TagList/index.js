@@ -3,21 +3,21 @@ import './style.css';
 
 function Tag(props) {
   return (
-    <div className="tag">
+    <div className='tag'>
       {props.children}
     </div>
   )
 }
 
 export default function TagList(props) {
-  function listTags() {
+  const listTags = () => {
     return props.tags.length > 0 ?
-      props.tags.map(tag => <Tag> {tag} </Tag>) :
+      props.tags.map((tag, i) => <Tag key={i}> {tag} </Tag>) :
       <></>
   }
 
   return (
-    <div className="tagList">
+    <div className='tagList'>
       {listTags()}
     </div>
   );
