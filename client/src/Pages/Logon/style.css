@@ -26,13 +26,13 @@
   line-height: 75px;
 }
 
-.login img {
-  /* height: 100%; */
-}
-
 .login-form {
   padding: 60px 40px 25px;
   background-color: #f7f7f7;
+}
+
+.login-form .form-button button {
+  margin: 30px 0 !important;
 }
 
 .login-fields .form-item {
