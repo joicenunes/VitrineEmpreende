@@ -3,10 +3,6 @@
   text-align: left;
 }
 
-.form-item label {
-  font-weight: bold;
-}
-
 .form-item-field {
   display: grid;
   grid-template-columns: 20px auto;

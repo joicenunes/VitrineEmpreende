@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
 
 .app {
+  background-color: #F7F7F7;
   width: 100vw;
   height: 100vh;;
   color: #9ea5b7 !important;
@@ -9,18 +10,6 @@
   font-weight: 500;
   font-size: 14px;
   line-height: 16px;
-}
-
-.form-button button {
-  border: none;
-  outline: none;
-  background-color: #9ea5b7;
-  color: white;
-  font-size: 19px;
-  width: 100%;
-  margin: 30px 0;
-  padding: 10px;
-  border-radius: 35px;
 }
 
 .form-links a {
@@ -48,7 +37,6 @@ a {
 }
 
 .page-content {
-  background-color: #F7F7F7;
   padding-top: 80px;
 }
 

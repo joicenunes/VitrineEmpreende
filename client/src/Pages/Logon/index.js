@@ -3,17 +3,20 @@ import { Link } from 'react-router-dom';
 
 import empreendeImg from '../../Assets/ft_condominio.png';
 
-import { HiOutlineUserCircle, HiOutlineKey } from 'react-icons/hi2';
+import { MdAccountCircle, MdVpnKey } from 'react-icons/md';
 import InputText from '../../Components/InputText';
 
 // import api from '../../services/api';
 
 import './style.css';
+import Button from '../../Components/Button';
 
 export default function Logon() {
   // const [id, setId] = useState('');
 
   //   const history = useHistory();
+
+  const imageConfig = `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${empreendeImg})`;
 
   const handleLogin = async (evt) => {
     evt.preventDefault();
@@ -31,11 +34,14 @@ export default function Logon() {
 
   return (
     <div className='login'>
-      <div className='login-image'>
-        <img
-          src={empreendeImg}
-          alt='Empreende UFC'
-        />
+      <div
+        className='login-image'
+        style={{ backgroundImage: imageConfig }}
+        alt='Empreende UFC'
+      >
+        <div className='login-image-title'>
+          Portfólio de Startups
+        </div>
       </div>
       <div className='login-form'>
         <form
@@ -50,24 +56,24 @@ export default function Logon() {
           <p>Entre com seu usuário e senha para acessar o sistema.</p>
           <div className='login-fields'>
             <InputText
+              color='primary'
               id='username'
               label='Usuário *'
-              icon={HiOutlineUserCircle}
+              icon={MdAccountCircle}
             />
             <InputText
+              color='primary'
               id='password'
               label='Senha *'
-              icon={HiOutlineKey}
+              icon={MdVpnKey}
             />
           </div>
-          <div className='form-button'>
-            <button
-              className='button'
-              type='submit'
-            >
-              Entrar
-            </button>
-          </div>
+          <Button
+            onClickButton={(evt) => handleLogin(evt)}
+            color='primary'
+          >
+            Entrar
+          </Button>
           <div className='form-links'>
             <p>
               <Link
