@@ -12,9 +12,7 @@ export default function Avatar(props) {
 
   return (
     <div className='avatar'>
-      <div className='initials'>
-        {getInitials()}
-      </div>
+      {getInitials()}
     </div>
   );
 }

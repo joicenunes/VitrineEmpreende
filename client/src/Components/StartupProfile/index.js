@@ -1,46 +1,54 @@
 import React from 'react';
 import './style.css';
 
-import { HiOutlinePhoto } from 'react-icons/hi2';
+import { MdOutlinePhoto } from 'react-icons/md';
 import { RiLinkedinBoxLine, RiTwitterLine, RiGithubLine } from 'react-icons/ri';
 
 import { Card, CardBody } from '../../Components/Card';
 import TagList from '../../Components/TagList';
 
-export default function StartupProfile(props) {  
-  const showStartupPhoto = (startup) => {
-    return startup.img ?
-      <img
-        src={startup.img}
-        alt={startup.name}
-      /> :
-      <HiOutlinePhoto
-        size={100}
-      />;
+export default function StartupProfile(props) {
+  const setTitleColor = (color) => {
+    switch (color) {
+      case 'primary':
+        return '#2EBEE5';
+      default:
+        return;
+    }
   }
 
   const showSocialNetwork = () => {
     return props.hiddenSocialNetwork ? <></> :
-    <div className='startup-social-network'>
-      <RiLinkedinBoxLine /> <RiTwitterLine /> <RiGithubLine />
-    </div>
+      <div className='startup-social-network'>
+        <RiLinkedinBoxLine size={20} color={setTitleColor(props.color)} /> <RiTwitterLine size={20} color={setTitleColor(props.color)} /> <RiGithubLine size={20} color={setTitleColor(props.color)} />
+      </div>
   }
 
   const showTags = (tags) => {
     return props.hiddenTags ? <></> :
-    <div className='startup-tags'>
-      <TagList tags={tags} maxWidth />
-    </div>
+      <div className='startup-tags'>
+        <TagList color='primary' tags={tags} maxWidth />
+      </div>
+  }
+
+  const showStartupPhoto = (startup) => {
+    return startup.img ?? { backgroundImage: `url(${startup.img})` }
   }
 
   return (
     <div className='startup-profile'>
       <Card>
         <CardBody>
-          <div className='startup-avatar-border'>
-            <div className='statup-avatar-img'>
-              {showStartupPhoto(props.startup)}
-            </div>
+          <div
+            className='startup-avatar-border'
+            style={showStartupPhoto(props.startup)}
+          >
+            {
+              props.startup.img ??
+                <MdOutlinePhoto
+                  size={100}
+                />
+            }
           </div>
           <div className='startup-name'>
             {props.startup.name}

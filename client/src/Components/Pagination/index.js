@@ -1,7 +1,7 @@
 import React from 'react';
 import './style.css';
 
-import { HiChevronLeft, HiChevronRight } from 'react-icons/hi2';
+import { MdChevronLeft, MdChevronRight } from 'react-icons/md';
 import Buttons from './memo';
 
 export default function Pagination({ page, onClickPageButton, totalPages, maxButtonsVisible }) {
@@ -12,7 +12,7 @@ export default function Pagination({ page, onClickPageButton, totalPages, maxBut
         onClick={() => onClickPageButton(page - 1)}
         disabled={page === 1}
       >
-        <HiChevronLeft size={18} />
+        <MdChevronLeft size={18} />
       </button>
       <Buttons
         onClickNumberButton={onClickPageButton}
@@ -25,7 +25,7 @@ export default function Pagination({ page, onClickPageButton, totalPages, maxBut
         onClick={() => onClickPageButton(page + 1)}
         disabled={page === totalPages}
       >
-        <HiChevronRight size={18} width={3} />
+        <MdChevronRight size={18} width={3} />
       </button>
     </div>
   );

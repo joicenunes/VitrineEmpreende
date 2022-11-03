@@ -1,7 +1,7 @@
 import React from 'react';
 import './style.css';
 
-import { HiMagnifyingGlass } from 'react-icons/hi2';
+import { MdSearch } from 'react-icons/md';
 
 import Avatar from '../Avatar';
 import InputText from '../InputText';
@@ -15,7 +15,7 @@ export default function Header(props) {
       <div className='actions'>
         <InputText
           id='username'
-          icon={HiMagnifyingGlass}
+          icon={MdSearch}
           noBorder
           placeholder='Buscar startup'
         />
