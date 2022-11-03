@@ -1,4 +1,4 @@
-import { memo, useEffect, useState } from "react";
+import { memo, useEffect, useState } from 'react';
 
 function PaginationButton({ onClickNumberButton, active, number }) {
   return (

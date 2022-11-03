@@ -5,7 +5,7 @@ header {
   display: grid;
   justify-content: space-around;
   grid-template-columns: 1fr 2fr 1fr;
-  grid-template-areas: "logotipo . actions";
+  grid-template-areas: 'logotipo . actions';
   position: absolute;
   border-bottom: 2px solid #EBEBEB;
 }

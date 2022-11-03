@@ -7,7 +7,7 @@
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   grid-template-areas:
-    ". basics basics basics info info info info info info info .";
+    '. basics basics basics info info info info info info info .';
 }
 
 .startup-profile {

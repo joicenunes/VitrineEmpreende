@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 import './style.css';
 
 function Tag({ style, children }) {
@@ -23,7 +23,6 @@ export default function TagList(props) {
       default:
         break;
     }
-    console.log({style})
     return style;
   }
 
