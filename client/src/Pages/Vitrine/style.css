@@ -1,0 +1,13 @@
+.vitrine {
+  display: flex;
+  justify-content: space-evenly;
+  gap: 40px;
+  flex-flow: row wrap;
+  /* flex-direction: row;
+  flex-wrap: wrap; */
+}
+
+.startup-card {
+  flex-basis: 30%;
+  max-width: 380px;
+}

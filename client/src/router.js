@@ -5,14 +5,15 @@ import './App.css';
 
 import Logon from './Pages/Logon';
 import Startup from './Pages/Startup';
-// import Register from './Pages/Register'
+import Vitrine from './Pages/Vitrine'
 
 export default function Router() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" exact element={<Logon />} />
-        <Route path="/startup" element={<Startup />} />
+        <Route path='/' exact element={<Logon />} />
+        <Route path='/startup' element={<Startup />} />
+        <Route path='/vitrine' element={<Vitrine />} />
       </Routes>
     </BrowserRouter>
   )
