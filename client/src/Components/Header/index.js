@@ -1,10 +1,8 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './style.css';
 
-import { MdSearch } from 'react-icons/md';
-
 import Avatar from '../Avatar';
-import InputText from '../InputText';
 
 export default function Header(props) {
   return (
@@ -13,12 +11,9 @@ export default function Header(props) {
         LOGOTIPO
       </div>
       <div className='actions'>
-        <InputText
-          id='username'
-          icon={MdSearch}
-          noBorder
-          placeholder='Buscar startup'
-        />
+        <div className='link'>
+          <Link to='/vitrine'>Buscar startup</Link>
+        </div>
         <Avatar name={'Joice Nunes'} />
       </div>
     </header>
