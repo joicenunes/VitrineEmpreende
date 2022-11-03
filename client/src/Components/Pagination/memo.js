@@ -13,18 +13,18 @@ function PaginationButton({ onClickNumberButton, active, number }) {
 
 const Buttons = ({ onClickNumberButton, currentPage, maxButtonsVisible, totalPages }) => {
   const [buttons,] = useState(Array(maxButtonsVisible).fill(0));
+  const [paginationAnchor,] = useState(Math.ceil(maxButtonsVisible / 2));
   const [firstButton, setFirstButton] = useState(1);
-  const anchor = Math.ceil(maxButtonsVisible / 2);
 
   useEffect(() => {
-    if (currentPage > anchor &&
+    if (currentPage > paginationAnchor &&
         currentPage <= totalPages - Math.floor(maxButtonsVisible/2)
     ) {
-      setFirstButton(currentPage - (anchor - 1));
-    } else if (currentPage <= anchor) {
+      setFirstButton(currentPage - (paginationAnchor - 1));
+    } else if (currentPage <= paginationAnchor) {
       setFirstButton(1);
     }
-  }, [currentPage, anchor, totalPages, maxButtonsVisible]);
+  }, [currentPage, paginationAnchor, totalPages, maxButtonsVisible]);
 
   return (
     <div>

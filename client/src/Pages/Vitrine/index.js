@@ -45,15 +45,16 @@ export default function Vitrine() {
     <div>
       <Header />
       <div className='page-content'>
+        <div className='vitrine'>
+          {showStartups()}
+        </div>
+        
         <Pagination
           totalPages={Math.floor(list.length / pageSize)}
           maxButtonsVisible={5}
           page={page}
           onClickPageButton={onClickPageButton}
         />
-        <div className='vitrine'>
-          {showStartups()}
-        </div>
       </div>
     </div>
   );

@@ -1,6 +1,6 @@
 .vitrine {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
   gap: 40px;
   flex-flow: row wrap;
   /* flex-direction: row;
