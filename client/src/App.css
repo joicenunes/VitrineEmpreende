@@ -1,15 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
 
 .app {
-  background-color: #F7F7F7;
   width: 100vw;
   height: 100vh;;
   color: #9ea5b7 !important;
   font-family: 'Montserrat', sans-serif;
   font-style: normal;
   font-weight: 500;
-  font-size: 14px;
-  line-height: 16px;
+  font-size: 16px;
+  line-height: 18px;
 }
 
 .form-links a {
