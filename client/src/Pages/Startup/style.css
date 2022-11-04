@@ -2,9 +2,7 @@
   color: inherit;
 }
 
-.startup-info-wrap {
-  margin-top: 32px;
-  
+.startup-info-wrap {  
   display: grid;
   grid-template-columns: 1fr 3fr 7fr 1fr;
   grid-template-areas: '. basics info .';
