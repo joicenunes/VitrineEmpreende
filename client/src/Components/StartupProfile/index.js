@@ -68,11 +68,14 @@ export default function StartupProfile(props) {
           </CardBody>
         </Card>
 
-        <div
-          className={`startup-description${props.noLink ? '-disabled' : ''}`}
-        >
-          <p>{props.startup.description}</p>
-        </div>
+        {
+          props.hiddenDescription ? <></> :
+            <div
+              className={`startup-description${props.noLink ? '-disabled' : ''}`}
+            >
+              <p>{props.startup.description}</p>
+            </div>
+        }
       </Link>
     </div>
   );

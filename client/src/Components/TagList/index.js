@@ -27,19 +27,17 @@ export default function TagList(props) {
   }
 
   const listTags = () => {
-    return props.tags.length > 0 ?
-      props.tags.map((tag, i) =>
-        <Tag
-          key={i}
-          style={setTagStyle(props.color)}
-        > {tag} </Tag>
-      ) :
-      <></>
+    return props.tags.map((tag, i) =>
+      <Tag
+        key={i}
+        style={setTagStyle(props.color)}
+      > {tag} </Tag>
+    )
   }
 
   return (
     <div className='tagList'>
-      {listTags()}
+      {props.tags?.length > 0 ? listTags() : <></>}
     </div>
   );
 }
