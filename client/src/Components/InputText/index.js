@@ -33,7 +33,7 @@ export default function InputText(props) {
         <input
           id={props.id}
           name={props.id}
-          type='text'
+          type={props.type ?? 'text'}
           placeholder={props.placeholder || ''}
         />
       </div>
