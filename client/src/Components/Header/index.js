@@ -19,7 +19,7 @@ export default function Header(props) {
             <Link to='/vitrine'>Buscar startup</Link>
           </div>
         </div>
-        <div class='col right'>
+        <div className='col right'>
           <div className='user-avatar'>
             <Link to='/startup'>
               <Avatar name={'Joice Nunes'} />
