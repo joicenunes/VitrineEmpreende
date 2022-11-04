@@ -10,12 +10,18 @@
 }
 
 .vitrine {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 10fr 1fr;
+  grid-template-areas: '. wrap .';
+  gap: 20px;
+  place-items: center;
+}
+
+.vitrine .wrap {
   justify-content: center;
-  gap: 40px;
+  grid-area: wrap;
+  display: flex;
   flex-flow: row wrap;
-  /* flex-direction: row;
-  flex-wrap: wrap; */
 }
 
 .startup-card {

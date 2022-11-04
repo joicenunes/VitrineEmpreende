@@ -71,7 +71,9 @@ export default function Vitrine() {
         </div>
 
         <div className='vitrine'>
-          {showStartups()}
+          <div className='wrap'>
+            {showStartups()}
+          </div>
         </div>
 
         <Pagination
