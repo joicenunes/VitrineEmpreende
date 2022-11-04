@@ -35,8 +35,12 @@ a {
   color: inherit;
 }
 
+button:hover {
+  cursor: pointer;
+}
+
 .page-content {
-  padding-top: 80px;
+  padding: 80px 0;
 }
 
 .clickable-icon {
