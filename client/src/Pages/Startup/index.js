@@ -1,4 +1,5 @@
 import React/* , { useState } */ from 'react';
+import { useParams } from 'react-router-dom';
 
 import './style.css';
 
@@ -8,6 +9,8 @@ import TagList from '../../Components/TagList';
 import StartupProfile from '../../Components/StartupProfile';
 
 export default function Startup() {
+  const { id } = useParams();
+  
   
   const startup = {
     id: 1,
@@ -22,7 +25,13 @@ export default function Startup() {
       <Header />
       <div className='page-content'>
         <div className='startup-info-wrap'>
-          <StartupProfile color='primary' startup={startup} hiddenTags hiddenDescription hiddenButtons />
+          <StartupProfile
+            color='primary'
+            startup={startup}
+            hiddenTags
+            hiddenDescription
+            noLink
+          />
           <div className='startup-cards'>
             <Card>
               <CardTitle color='primary'>

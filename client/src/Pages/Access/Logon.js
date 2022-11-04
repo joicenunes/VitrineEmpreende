@@ -33,28 +33,28 @@ export default function Logon() {
   }
 
   return (
-    <div className='login'>
+    <div className='access'>
       <div
-        className='login-image'
+        className='access-image'
         style={{ backgroundImage: imageConfig }}
         alt='Empreende UFC'
       >
-        <div className='login-image-title'>
+        <div className='access-image-title'>
           Portfólio de Startups
         </div>
       </div>
-      <div className='login-form'>
+      <div className='access-form'>
         <form
           onSubmit={handleLogin}
           className='form'
-          alt='login-form'
+          alt='access-form'
         >
           {/* <img src={logo} className='logo' alt='logo' /> */}
           <p>
             <strong>Bem-vindo(a)!</strong>
           </p>
-          <p>Entre com seu usuário e senha para acessar o sistema.</p>
-          <div className='login-fields'>
+          <p>Entre com seu usuário e senha para accessar o sistema.</p>
+          <div className='access-fields'>
             <InputText
               color='primary'
               id='username'
@@ -63,13 +63,13 @@ export default function Logon() {
             />
             <InputText
               color='primary'
+              type='password'
               id='password'
               label='Senha *'
               icon={MdVpnKey}
             />
           </div>
           <Button
-            onClickButton={(evt) => handleLogin(evt)}
             color='primary'
           >
             Entrar
@@ -77,7 +77,7 @@ export default function Logon() {
           <div className='form-links'>
             <p>
               <Link
-                className='login-link'
+                className='access-link'
                 to='/forgotpassword'
               >
                 Esqueceu a senha?
@@ -85,7 +85,7 @@ export default function Logon() {
             </p>
             <p>
               Não possui uma conta? <Link
-                className='login-link'
+                className='access-link'
                 to='/register'
               >
                 Criar uma.

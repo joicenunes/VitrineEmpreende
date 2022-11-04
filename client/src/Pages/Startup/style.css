@@ -4,10 +4,11 @@
 
 .startup-info-wrap {
   margin-top: 32px;
+  
   display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  grid-template-areas:
-    '. basics basics basics info info info info info info info .';
+  grid-template-columns: 1fr 3fr 7fr 1fr;
+  grid-template-areas: '. basics info .';
+  place-items: start space-around;
 }
 
 .startup-profile {
@@ -17,5 +18,4 @@
 .startup-cards {
   grid-area: info;
   display: grid;
-  row-gap: 16px;
 }
