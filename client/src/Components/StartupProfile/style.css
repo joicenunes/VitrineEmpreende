@@ -3,6 +3,14 @@
   text-align: center;
 }
 
+.startup-profile:hover {
+  z-index: 999;
+}
+
+.startup-profile a {
+  text-decoration: none;
+}
+
 .startup-avatar {
   margin: 0 auto 16px;
   box-sizing: border-box;
@@ -42,20 +50,26 @@
   padding: 60px 20px 20px;
   margin: -50px 8px 8px;
   text-align: left;
+
+  display: none;
   
   box-sizing: border-box;
   max-width: 380px;
   max-height: 240px;
 
-  position: relative;
+  position: absolute;
   z-index: -1;
 
+}
+
+.startup-profile:hover .startup-description {
+  display: block;
 }
 
 .startup-description p {
   overflow: hidden;
   margin: 0;
   display: -webkit-box;
-  -webkit-line-clamp: 8;
+  -webkit-line-clamp: 4;
   -webkit-box-orient: vertical;  
 }
