@@ -1,7 +1,9 @@
-import React/* , { useState } */ from 'react';
+import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 
 import './style.css';
+
+import startupList from '../../Helper/mock';
 
 import { Card, CardBody, CardTitle } from '../../Components/Card';
 import Header from '../../Components/Header';
@@ -10,15 +12,20 @@ import StartupProfile from '../../Components/StartupProfile';
 
 export default function Startup() {
   const { id } = useParams();
-  
-  
-  const startup = {
-    id: 1,
+  const [startup, setStartup] = useState({
+    id: '',
+    description: '',
     img: null,
-    name: 'Startup Exemplo',
-    email: 'startup@exemplo.com',
-    tags: 'Maecenas tincidunt, lacus eget faucibus bibendum, erat purus sodales purus, quis interdum turpis turpis vitae augue.'.split(' ')
-  };
+    name: '',
+    email: '',
+    tags: []
+  });
+
+  useEffect(() => {
+    let findId = id ?? localStorage.getItem("myId");
+    let selected = startupList.find(el => parseInt(findId) === el.id);
+    setStartup(selected);
+  }, [id]);
 
   return (
     <div className='startup'>
@@ -38,13 +45,13 @@ export default function Startup() {
                 Sobre a equipe
               </CardTitle>
               <CardBody>
-                Maecenas tincidunt, lacus eget faucibus bibendum, erat purus sodales purus, quis interdum turpis turpis vitae augue. Sed fermentum libero in est blandit congue. Donec nec lectus vitae metus euismod tempor. Curabitur maximus mollis sapien. Donec ut arcu tempus, pulvinar magna at, tincidunt magna. Fusce ut porttitor erat. Nunc malesuada nisi ac risus tristique condimentum.
+                {startup.description}
               </CardBody>
             </Card>
 
             <Card>
               <CardTitle color='primary'>
-                Areas de atuação
+                Áreas de atuação
               </CardTitle>
               <CardBody>
                 <TagList color='primary' tags={startup.tags} />

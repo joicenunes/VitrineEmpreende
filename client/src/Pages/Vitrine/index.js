@@ -1,7 +1,7 @@
 import React, { /* useEffect, */ useEffect, useState } from 'react';
 import './style.css';
 
-import startupList from './mock';
+import startupList from '../../Helper/mock';
 
 import { MdSearch } from 'react-icons/md';
 import Button from '../../Components/Button';
@@ -39,7 +39,7 @@ export default function Vitrine() {
   }
 
   const showStartups = () => {
-    return startups.length ?
+    return startups.length > 0 ?
       startups.map(startup => showStartupCard(startup)) :
       <></>;
   }
