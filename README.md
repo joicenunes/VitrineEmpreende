@@ -33,15 +33,14 @@ O projeto em questão foi realizado durante a disciplina de Projeto Integrado I,
 |  ----------------------------                    |  
 |   Wellington Vagner Ferreira Sarmento            |  
 |   Cátia Luzia Oliveira da Silva                  | 
-<br>
+
 <a name="license"></a>
 
 ## :memo: Licença
-Este código está sobre a licença GNU GPL 3.0. Para mais informações, veja o [LICENSE](https://github.com/GustavoCassimiro9/ProjetoIntegrado1-SMD-OsJovensTitans/blob/main/LICENSE).
+Este código está sobre a licença GNU GPL 3.0. Para mais informações, veja o [LICENSE](https://github.com/joicenunes/VitrineEmpreende/blob/main/LICENSE).
 <br>
 <a name="documento"></a>
 
 ## :clipboard: Relatório
 
-O relatório completo sobre o processo de desenvolvimento dessa aplicação pode ser encontrado em: 
-https://docs.google.com/document/d/1hBZQAL9Xy70LAdbJbVsiKNGVuqxz_UYUTmiVVg30NgU/edit?usp=sharing
+O relatório completo sobre o processo de desenvolvimento dessa aplicação pode ser encontrado no [link](https://docs.google.com/document/d/1hBZQAL9Xy70LAdbJbVsiKNGVuqxz_UYUTmiVVg30NgU/edit?usp=sharing)
