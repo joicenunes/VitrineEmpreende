@@ -58,18 +58,18 @@ O projeto em questão foi realizado durante a disciplina de Projeto Integrado I,
 
 ## :dart: Requisitos funcionais
 
-|  Código                           |  Descrição                                                                               | Codificação   | Status       | 
-|  ----------------------------     | ----------------------------------------------------------------                         | ------------  | ------       |
-|  RF0001                          |  Mostrar tela de Vitrine                                                                  | Em breve      | concluido    |
-|  RF0002                          |  Buscar por Startup por texto com palavra chave                                           | Em breve      | concluido    |
-|  RF0003                          |  Filtrar listagem de Startups por tags e/ou fase do negócio                               | Em breve      | concluido    |
-|  RF0004                          |  Mostrar tela de visualização de uma Startups                                             | Em breve      | concluido    |
-|  RF0005                          |  Mostrar tela de login                                                                    | Em breve      | concluido    |
-|  RF0006                          |  Mostrar tela de cadastro de administrador                                                | Em breve      | concluido    |
-|  RF0007                          |  Confirmar cadastro do administrador                                                      | Em breve      | concluido    |
-|  RF0008                          |  Mostrar tela principal de administrador                                                  | Em breve      | concluido    |
-|  RF0009                          |  Opções de edição das startups                                                            | Em breve      | concluido    |
-|  RF0010                          |  Opções de edição da coordenação das startups                                             | Em breve      | concluido    |
+|  Código                           |  Descrição                                                                               | Codificação  | Status              | 
+|  ----------------------------     | ----------------------------------------------------------------                         | -----------  | ------------------  |
+|  RF0001                          |  Mostrar tela de Vitrine                                                                  | Em breve     | Em desenvolvimento  |
+|  RF0002                          |  Buscar por Startup por texto com palavra chave                                           | Em breve     | Em desenvolvimento  |
+|  RF0003                          |  Filtrar listagem de Startups por tags e/ou fase do negócio                               | Em breve     | Em desenvolvimento  |
+|  RF0004                          |  Mostrar tela de visualização de uma Startups                                             | Em breve     | Em desenvolvimento  |
+|  RF0005                          |  Mostrar tela de login                                                                    | Em breve     | Em desenvolvimento  |
+|  RF0006                          |  Mostrar tela de cadastro de administrador                                                | Em breve     | Em desenvolvimento  |
+|  RF0007                          |  Confirmar cadastro do administrador                                                      | Em breve     | Em desenvolvimento  |
+|  RF0008                          |  Mostrar tela principal de administrador                                                  | Em breve     | Em desenvolvimento  |
+|  RF0009                          |  Opções de edição das startups                                                            | Em breve     | Em desenvolvimento  |
+|  RF0010                          |  Opções de edição da coordenação das startups                                             | Em breve     | Em desenvolvimento  |
 
 
 <a name="protótipo"></a>
