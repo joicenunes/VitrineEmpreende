@@ -1,7 +1,7 @@
 import React, { /* useEffect, */ useEffect, useState } from 'react';
 import './style.css';
 
-import { startupList, tags } from '../../Helper/mock';
+import { startupList, tags } from '../../Helper/startupsMock';
 
 import { MdSearch } from 'react-icons/md';
 import Button from '../../Components/Button';
