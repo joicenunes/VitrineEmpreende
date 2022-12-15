@@ -19,7 +19,7 @@ let startupList = Array(50).fill(0).map((_, i) => {
     img: null,
     name: `Startup Exemplo ${i + 1}`,
     email: 'startup@exemplo.com',
-    tags: tags[tagIndex],
+    tags: [tags[tagIndex]],
     description: descriptions[tagIndex]
   });
 });

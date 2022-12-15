@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom';
 
 import './style.css';
 
-import startupList from '../../Helper/mock';
+import { startupList } from '../../Helper/startupsMock';
 
 import { Card, CardBody, CardTitle } from '../../Components/Card';
 import Header from '../../Components/Header';
@@ -11,19 +11,21 @@ import TagList from '../../Components/TagList';
 import StartupProfile from '../../Components/StartupProfile';
 
 export default function Startup() {
-  const { id } = useParams();
-  const [startup, setStartup] = useState({
-    id: '',
-    description: '',
+  const defaultStartup = {
+    id: 0,
+    description: 'Lorem ipsum.',
     img: null,
-    name: '',
-    email: '',
-    tags: []
-  });
+    name: 'Default Startup',
+    email: 'startup@default.com',
+    tags: ['Padrão']
+  };
+
+  const { id } = useParams();
+  const [startup, setStartup] = useState();
 
   useEffect(() => {
-    let findId = id ?? localStorage.getItem("myId");
-    let selected = startupList.find(el => parseInt(findId) === el.id);
+    let idToFind = id ?? localStorage.getItem("startupId");
+    let selected = startupList.find(el => parseInt(idToFind) === el.id);
     setStartup(selected);
   }, [id]);
 
@@ -34,7 +36,7 @@ export default function Startup() {
         <div className='startup-info-wrap'>
           <StartupProfile
             color='primary'
-            startup={startup}
+            startup={startup ?? defaultStartup}
             hiddenTags
             hiddenDescription
             noLink
@@ -45,16 +47,15 @@ export default function Startup() {
                 Sobre a equipe
               </CardTitle>
               <CardBody>
-                {startup.description}
+                {startup?.description ?? defaultStartup.description}
               </CardBody>
             </Card>
-
             <Card>
               <CardTitle color='primary'>
                 Áreas de atuação
               </CardTitle>
               <CardBody>
-                <TagList color='primary' tags={startup.tags} />
+                <TagList color='primary' tags={startup?.tags ?? defaultStartup.tags} />
               </CardBody>
             </Card>
           </div>
