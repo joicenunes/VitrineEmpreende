@@ -17,9 +17,9 @@ export default function InputText(props) {
       case 'primary':
         return '#2EBEE5';
       default:
-        return; 
+        return;
     }
-  } 
+  }
 
   return (
     <div
@@ -35,6 +35,7 @@ export default function InputText(props) {
           name={props.id}
           type={props.type ?? 'text'}
           placeholder={props.placeholder || ''}
+          onChange={props.onInputChange}
         />
       </div>
     </div>

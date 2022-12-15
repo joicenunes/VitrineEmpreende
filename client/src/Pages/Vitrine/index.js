@@ -16,20 +16,27 @@ export default function Vitrine() {
   const [pageSize,] = useState(6);
   const [page, setPage] = useState(1);
   const [tag, setTag] = useState('Todos');
+  const [typeCounter, setTypeCounter] = useState(0);
 
+  const [filter, setFilter] = useState('');
   const [startups, setStartups] = useState([]);
 
   useEffect(_ => {
     let list = fullList;
+    if (filter.length > 0) {
+      list = list.filter(startup =>
+        startup.name.indexOf(filter) > -1
+      )
+    }
     if (tag !== 'Todos') {
-      list = fullList.filter(startup =>
+      list = list.filter(startup =>
         startup.tags.includes(tag)
       );
     }
     setStartups(
       list.slice((page - 1) * pageSize, page * pageSize)
     );
-  }, [fullList, page, pageSize, tag]);
+  }, [fullList, page, pageSize, tag, filter]);
 
   const showStartupCard = (startup) => {
     return (
@@ -60,6 +67,13 @@ export default function Vitrine() {
     setPage(1);
   }
 
+  const filterStartupByText = (evt) => {
+    clearTimeout(typeCounter);
+    setTypeCounter(
+      setTimeout(() => setFilter(evt.target.value), 1000)
+    );
+  }
+
   return (
     <div>
       <Header />
@@ -70,6 +84,7 @@ export default function Vitrine() {
             id='search'
             placeholder='Nome da startup'
             icon={MdSearch}
+            onInputChange={(evt) => filterStartupByText(evt)}
           />
           <Button
             color='primary'
