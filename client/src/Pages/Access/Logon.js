@@ -1,35 +1,41 @@
 import React/* , { useState } */ from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 import empreendeImg from '../../Assets/ft_condominio.png';
 
+import './style.css';
 import { MdAccountCircle, MdVpnKey } from 'react-icons/md';
+import Button from '../../Components/Button';
 import InputText from '../../Components/InputText';
+import loginMock from '../../Helper/loginMock';
 
 // import api from '../../services/api';
 
-import './style.css';
-import Button from '../../Components/Button';
-
 export default function Logon() {
-  // const [id, setId] = useState('');
-
-  //   const history = useHistory();
+  const navigate = useNavigate();
 
   const imageConfig = `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${empreendeImg})`;
 
   const handleLogin = async (evt) => {
     evt.preventDefault();
 
-    // try {
-    //   //   const res = await api.post('/sessions', { id });
-
-    //   // localStorage.setItem('ongId', id);
-    //   // localStorage.setItem('ongName', res.data.name);
-    //   //   history.pushState('/profile');
-    // } catch (e) {
-    //   alert('Falha no login, verifique seu ID.');
-    // }
+    try {
+      let username = evt.target.username.value;
+      let password = evt.target.password.value;
+      if (
+        loginMock.username.toLowerCase() === username.toLowerCase() &&
+        loginMock.password === password
+      ) {
+        localStorage.setItem('startupId', loginMock.startupId);
+        localStorage.setItem('userId', loginMock.id);
+        localStorage.setItem('userName', loginMock.name);
+        navigate('/vitrine');
+      } else {
+        throw Error('Falha no login, verifique suas credenciais.');
+      }
+    } catch (e) {
+      alert(e.message);
+    }
   }
 
   return (
