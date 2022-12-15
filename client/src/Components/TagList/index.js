@@ -37,7 +37,7 @@ export default function TagList(props) {
 
   return (
     <div className='tagList'>
-      {props.tags?.length > 0 ? listTags() : <></>}
+      {props.tags.length > 0 && listTags()}
     </div>
   );
 }
