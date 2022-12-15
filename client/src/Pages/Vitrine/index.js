@@ -15,7 +15,7 @@ export default function Vitrine() {
 
   const [pageSize,] = useState(6);
   const [page, setPage] = useState(1);
-  const [tag, setTag] = useState('Todos');
+  const [category, setCategory] = useState('Todos');
   const [typeCounter, setTypeCounter] = useState(0);
 
   const [filter, setFilter] = useState('');
@@ -28,15 +28,15 @@ export default function Vitrine() {
         startup.name.indexOf(filter) > -1
       )
     }
-    if (tag !== 'Todos') {
+    if (category !== 'Todos') {
       list = list.filter(startup =>
-        startup.tags.includes(tag)
+        startup.tags.includes(category)
       );
     }
     setStartups(
       list.slice((page - 1) * pageSize, page * pageSize)
     );
-  }, [fullList, page, pageSize, tag, filter]);
+  }, [fullList, page, pageSize, category, filter]);
 
   const showStartupCard = (startup) => {
     return (
@@ -63,7 +63,7 @@ export default function Vitrine() {
   }
 
   const onClickFilterByTag = (tag) => {
-    setTag(tag);
+    setCategory(tag);
     setPage(1);
   }
 
@@ -87,14 +87,16 @@ export default function Vitrine() {
             onInputChange={(evt) => filterStartupByText(evt)}
           />
           <Button
-            color='primary'
+            color={'primary'}
+            outline={category === 'Todos'}
             onClickButton={() => onClickFilterByTag('Todos')}
           >Todos</Button>
           {
             tags.length > 0 && tags.map((tag, index) => (
               <Button
                 key={'tag'+index}
-                color='primary'
+                color={'primary'}
+                outline={category === tag}
                 onClickButton={() => onClickFilterByTag(tag)}
               >{tag}</Button>
             ))

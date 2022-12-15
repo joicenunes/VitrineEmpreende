@@ -6,6 +6,7 @@ export default function Button(props) {
     let style = {};
 
     if (props.outline) {
+      style.backgroundColor = 'transparent';
       style.borderStyle = 'solid';
       style.borderWidth = '1px';
       switch (props.color) {
