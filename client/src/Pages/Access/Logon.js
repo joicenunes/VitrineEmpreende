@@ -1,4 +1,4 @@
-import React/* , { useState } */ from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 
 import empreendeImg from '../../Assets/ft_condominio.png';
@@ -13,8 +13,15 @@ import loginMock from '../../Helper/loginMock';
 
 export default function Logon() {
   const navigate = useNavigate();
+  const [id, /* setId */] = useState(localStorage.getItem('userId'));
 
   const imageConfig = `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${empreendeImg})`;
+
+  useEffect(() => {
+    if (id !== undefined) {
+      navigate('/vitrine');
+    }
+  }, [id, navigate])
 
   const handleLogin = async (evt) => {
     evt.preventDefault();
