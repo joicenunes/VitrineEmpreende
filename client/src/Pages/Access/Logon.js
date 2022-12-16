@@ -89,14 +89,6 @@ export default function Logon() {
           </Button>
           <div className='form-links'>
             <p>
-              <Link
-                className='access-link'
-                to='/forgotpassword'
-              >
-                Esqueceu a senha?
-              </Link>
-            </p>
-            <p>
               Não possui uma conta? <Link
                 className='access-link'
                 to='/register'
