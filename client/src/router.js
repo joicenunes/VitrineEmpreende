@@ -18,7 +18,6 @@ export default function Router() {
         <Route path='/register' element={<Register />} />
         <Route path='/confirmation' element={<Confirmation />} />
         <Route path='/startup' element={<Startup />}>
-          <Route path='' element={<Startup />} />
           <Route path=':id' element={<Startup />} />
         </Route>
         <Route path='/management' element={<Management />} />
