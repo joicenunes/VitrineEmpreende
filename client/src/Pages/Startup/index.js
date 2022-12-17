@@ -6,7 +6,7 @@ import './style.css';
 import { startupList } from '../../Helper/startupsMock';
 
 import { Card, CardBody, CardTitle } from '../../Components/Card';
-import Header from '../../Components/Header';
+//import Header from '../../Components/Header';
 import TagList from '../../Components/TagList';
 import StartupProfile from '../../Components/StartupProfile';
 
@@ -36,10 +36,10 @@ export default function Startup() {
   }, [id, navigate]);
 
   return (
-    <div className='startup'>
-      <Header />
-      <div className='page-content'>
-        <div className='startup-info-wrap'>
+    <section className='startup'>
+      {/* <Header /> */}
+      <section className='page-content'>
+        <section className='startup-info-wrap'>
           <StartupProfile
             color='primary'
             startup={startup ?? defaultStartup}
@@ -47,7 +47,7 @@ export default function Startup() {
             hiddenDescription
             noLink
           />
-          <div className='startup-cards'>
+          <article className='startup-cards'>
             <Card>
               <CardTitle color='primary'>
                 Sobre a equipe
@@ -68,9 +68,9 @@ export default function Startup() {
                 />
               </CardBody>
             </Card>
-          </div>
-        </div>
-      </div>
-    </div>
+          </article>
+        </section>
+      </section>
+    </section>
   );
 }

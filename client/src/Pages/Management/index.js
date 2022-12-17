@@ -6,13 +6,13 @@ import { startupList, tags } from '../../Helper/startupsMock';
 import { MdSearch } from 'react-icons/md';
 import Button from '../../Components/Button';
 import { Card, CardBody } from '../../Components/Card';
-import Header from '../../Components/Header';
+//import Header from '../../Components/Header';
 import InputText from '../../Components/InputText';
 import Pagination from '../../Components/Pagination';
 import TagList from '../../Components/TagList';
 import { Link } from 'react-router-dom';
 
-export default function Showcase() {
+export default function Management() {
   const fullList = startupList;
 
   const [pageSize,] = useState(6);
@@ -55,20 +55,20 @@ export default function Showcase() {
 
   const showStartupCard = (startup) => {
     return (
-      <Link to={`/startup/${startup.id}`}>
-        <Card key={'startup' + startup.id}>
+      <Link key={'startup' + startup.id} to={`/startup/${startup.id}`}>
+        <Card>
           <CardBody>
-            <p>{startup.name}</p>
-            <p>
+            <section>{startup.name}</section>
+            <section>
               <TagList
                 color='primary'
                 outline
                 tags={startup.tags}
               />
-            </p>
-            <p>
+            </section>
+            <section>
               <Button color={getColorByActivity(startup.activity)} disabled>{startup.activity}</Button>
-            </p>
+            </section>
           </CardBody>
         </Card>
       </Link>
@@ -98,8 +98,8 @@ export default function Showcase() {
   }
 
   return (
-    <div>
-      <Header />
+    <>
+      {/* <Header /> */}
       <section className='page-content'>
         <section className='startup-list'>
           <header className='filtros'>
@@ -139,6 +139,6 @@ export default function Showcase() {
           onClickPageButton={onClickPageButton}
         />
       </section>
-    </div>
+    </>
   );
 }

@@ -5,7 +5,7 @@ import { startupList, tags } from '../../Helper/startupsMock';
 
 import { MdSearch } from 'react-icons/md';
 import Button from '../../Components/Button';
-import Header from '../../Components/Header';
+//import Header from '../../Components/Header';
 import InputText from '../../Components/InputText';
 import Pagination from '../../Components/Pagination';
 import StartupProfile from '../../Components/StartupProfile';
@@ -73,8 +73,8 @@ export default function Showcase() {
   }
 
   return (
-    <div>
-      <Header />
+    <>
+      {/* <Header /> */}
       <section className='page-content'>
         <section className='vitrine'>
           <header className='filtros'>
@@ -114,6 +114,6 @@ export default function Showcase() {
           onClickPageButton={onClickPageButton}
         />
       </section>
-    </div>
+    </>
   );
 }

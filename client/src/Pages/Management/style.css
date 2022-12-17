@@ -27,8 +27,19 @@
 }
 
 .startup-list .wrap .card .card-body {
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns:repeat(3, 1fr);
   align-items: center;
+}
+
+.startup-list .wrap .card .card-body section {
+  justify-self: center;
+}
+
+.startup-list .wrap .card .card-body section:first-child {
+  justify-self: start !important;
+}
+
+.startup-list .wrap .card .card-body section:last-child {
+  justify-self: end !important;
 }
