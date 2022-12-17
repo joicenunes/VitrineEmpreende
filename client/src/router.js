@@ -5,8 +5,9 @@ import './App.css';
 
 import { Logon, Register, Confirmation } from './Pages/Access';
 import Home from './Pages/Home'
+import Management from './Pages/Management';
 import Startup from './Pages/Startup';
-import Vitrine from './Pages/Vitrine'
+import Showcase from './Pages/Showcase';
 
 export default function Router() {
   return (
@@ -20,7 +21,8 @@ export default function Router() {
           <Route path='' element={<Startup />} />
           <Route path=':id' element={<Startup />} />
         </Route>
-        <Route path='/vitrine' element={<Vitrine />} />
+        <Route path='/management' element={<Management />} />
+        <Route path='/showcase' element={<Showcase />} />
       </Routes>
     </BrowserRouter>
   )
