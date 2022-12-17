@@ -5,7 +5,6 @@ import { startupList, tags } from '../../Helper/startupsMock';
 
 import { MdSearch } from 'react-icons/md';
 import Button from '../../Components/Button';
-//import Header from '../../Components/Header';
 import InputText from '../../Components/InputText';
 import Pagination from '../../Components/Pagination';
 import StartupProfile from '../../Components/StartupProfile';
@@ -15,13 +14,15 @@ export default function Showcase() {
 
   const [pageSize,] = useState(6);
   const [page, setPage] = useState(1);
+  const [totalPages, setTotalPages] = useState(0);
   const [category, setCategory] = useState('Todos');
   const [typeCounter, setTypeCounter] = useState(0);
 
   const [filter, setFilter] = useState('');
   const [startups, setStartups] = useState([]);
 
-  useEffect(_ => {
+    /* TODO: componentizar filtros */
+    useEffect(_ => {
     let list = fullList;
     if (filter.length > 0) {
       list = list.filter(startup =>
@@ -33,9 +34,10 @@ export default function Showcase() {
         startup.tags.includes(category)
       );
     }
-    setStartups(
-      list.slice((page - 1) * pageSize, page * pageSize)
-    );
+    
+    setTotalPages(Math.floor(list.length / pageSize));
+
+    setStartups(list.slice((page - 1) * pageSize, page * pageSize));
   }, [fullList, page, pageSize, category, filter]);
 
   const showStartupCard = (startup) => {
@@ -77,6 +79,7 @@ export default function Showcase() {
       {/* <Header /> */}
       <section className='page-content'>
         <section className='vitrine'>
+          {/* TODO: componentizar filtros */}
           <header className='filtros'>
             <InputText
               color='primary'
@@ -108,7 +111,7 @@ export default function Showcase() {
         </section>
 
         <Pagination
-          totalPages={Math.floor(startups.length / pageSize)}
+          totalPages={totalPages}
           maxButtonsVisible={5}
           page={page}
           onClickPageButton={onClickPageButton}
