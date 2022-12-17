@@ -67,9 +67,7 @@ export default function Register() {
               icon={MdVpnKey}
             />
           </div>
-          <Button
-            color='primary'
-          >
+          <Button block color='primary'>
             Enviar código
           </Button>
         </form>
