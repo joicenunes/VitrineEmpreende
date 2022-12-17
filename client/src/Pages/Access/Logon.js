@@ -26,7 +26,6 @@ export default function Logon() {
         loginMock.username.toLowerCase() === username.toLowerCase() &&
         loginMock.password === password
       ) {
-        localStorage.setItem('startupId', loginMock.startupId);
         localStorage.setItem('userId', loginMock.id);
         localStorage.setItem('userName', loginMock.name);
         navigate('/showcase');
