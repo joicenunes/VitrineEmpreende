@@ -35,8 +35,28 @@ a {
   color: inherit;
 }
 
+a button, link button, a:link button {
+  text-decoration: none !important;
+}
+
+button {
+  box-sizing: border-box;
+  border: none;
+  outline: none;
+  color: white;
+  font-size: 19px;
+  margin: 10px 0;
+  padding: 10px;
+  border-radius: 10px;
+  text-decoration: none !important;
+}
+
 button:hover {
   cursor: pointer;
+}
+
+button:disabled {
+  pointer-events: none;
 }
 
 .page-content {
