@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 
 import empreendeImg from '../../Assets/ft_condominio.png';
@@ -13,15 +13,8 @@ import loginMock from '../../Helper/loginMock';
 
 export default function Logon() {
   const navigate = useNavigate();
-  const [id, /* setId */] = useState(localStorage.getItem('userId'));
 
   const imageConfig = `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${empreendeImg})`;
-
-  useEffect(() => {
-    if (id !== undefined) {
-      navigate('/vitrine');
-    }
-  }, [id, navigate])
 
   const handleLogin = async (evt) => {
     evt.preventDefault();
@@ -36,7 +29,7 @@ export default function Logon() {
         localStorage.setItem('startupId', loginMock.startupId);
         localStorage.setItem('userId', loginMock.id);
         localStorage.setItem('userName', loginMock.name);
-        navigate('/vitrine');
+        navigate('/showcase');
       } else {
         throw Error('Falha no login, verifique suas credenciais.');
       }
@@ -82,9 +75,7 @@ export default function Logon() {
               icon={MdVpnKey}
             />
           </div>
-          <Button
-            color='primary'
-          >
+          <Button block color='primary'>
             Entrar
           </Button>
           <div className='form-links'>

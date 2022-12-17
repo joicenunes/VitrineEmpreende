@@ -25,10 +25,8 @@ export default function Home() {
         <h1>Bem-vindo(a)!</h1>
         <p>O Portfólio de Startups é uma iniciativa do Condomínio de Empreendedorismo da Universidade Federal do Ceará.</p>
         <p>Nosso objetivo é promover as equipes participantes dos programas de fomento a inovação da universidade</p>
-        <Link to="/vitrine">
-          <Button
-            color='primary'
-          >
+        <Link to="/showcase">
+          <Button block color='primary'>
             Conhecer os projetos
           </Button>
         </Link>
