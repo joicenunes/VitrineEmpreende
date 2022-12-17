@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 
 import './style.css';
 
@@ -13,21 +13,27 @@ import StartupProfile from '../../Components/StartupProfile';
 export default function Startup() {
   const defaultStartup = {
     id: 0,
-    description: 'Lorem ipsum.',
+    description: '',
     img: null,
-    name: 'Default Startup',
-    email: 'startup@default.com',
-    tags: ['Padrão']
+    name: '',
+    email: '',
+    tags: []
   };
+
+  const navigate = useNavigate();
 
   const { id } = useParams();
   const [startup, setStartup] = useState();
 
   useEffect(() => {
-    let idToFind = id ?? localStorage.getItem("startupId");
-    let selected = startupList.find(el => parseInt(idToFind) === el.id);
-    setStartup(selected);
-  }, [id]);
+    let idToFind = id;
+    if (idToFind) {
+      let selected = startupList.find(el => parseInt(idToFind) === el.id);
+      setStartup(selected);
+    } else {
+      navigate('/showcase');
+    }
+  }, [id, navigate]);
 
   return (
     <div className='startup'>
