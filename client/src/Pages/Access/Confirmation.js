@@ -46,9 +46,7 @@ export default function Confirmation() {
               icon={MdVpnKey}
             />
           </div>
-          <Button
-            color='primary'
-          >
+          <Button block color='primary'>
             Entrar
           </Button>
           <div className='form-links'>
