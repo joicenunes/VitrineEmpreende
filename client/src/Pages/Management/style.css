@@ -1,7 +1,15 @@
+.startup-list {
+  display: grid;
+  grid-template-columns: 1fr 10fr 1fr;
+  grid-template-areas: '. filter .' '. wrap .';
+}
+
 .filtros {
+  grid-area: filter;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
+  place-self: center start;
   gap: 16px;
 }
 
@@ -9,16 +17,13 @@
   margin-top: -1em;
 }
 
-.startup-list {
-  display: grid;
-  grid-template-columns: 1fr 10fr 1fr;
-  grid-template-areas: '. wrap .';
-  gap: 20px;
-}
-
 .startup-list .wrap {
   justify-content: center;
   grid-area: wrap;
+}
+
+.startup-list .wrap .card {
+  margin: 12px 50px;
 }
 
 .startup-list .wrap .card .card-body {

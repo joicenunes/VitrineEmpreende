@@ -1,20 +1,21 @@
+.vitrine {
+  display: grid;
+  grid-template-columns: 1fr 10fr 1fr;
+  grid-template-areas: '. filter .' '. wrap .';
+  place-items: center;
+}
+
 .filtros {
+  grid-area: filter;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
+  place-self: center start;
   gap: 16px;
 }
 
 .filtros .form-item {
   margin-top: -1em;
-}
-
-.vitrine {
-  display: grid;
-  grid-template-columns: 1fr 10fr 1fr;
-  grid-template-areas: '. wrap .';
-  gap: 20px;
-  place-items: center;
 }
 
 .vitrine .wrap {
@@ -25,6 +26,7 @@
 }
 
 .startup-card {
-  flex-basis: 30%;
+  margin: 0 50px;
+  flex-basis: 23%;
   max-width: 380px;
 }

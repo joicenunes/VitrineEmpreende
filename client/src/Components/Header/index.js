@@ -9,7 +9,7 @@ export default function Header(props) {
   let [userName, /* setUserName */] = useState(localStorage.getItem('userName'));
 
   return (
-    <header>
+    <header className='topbar'>
       <div className='col'>
         <div className='logotipo'>
           LOGOTIPO

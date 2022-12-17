@@ -40,15 +40,13 @@ export default function Showcase() {
 
   const showStartupCard = (startup) => {
     return (
-      <div key={'startup'+startup.id} className='startup-card'>
-        <div className='startup-card-content'>
-          <StartupProfile
-            startup={startup}
-            hiddenSocialNetwork
-            hiddenTags
-          />
-        </div>
-      </div>
+      <article key={'startup'+startup.id} className='startup-card'>
+        <StartupProfile
+          startup={startup}
+          hiddenSocialNetwork
+          hiddenTags
+        />
+      </article>
     );
   }
 
@@ -77,37 +75,37 @@ export default function Showcase() {
   return (
     <div>
       <Header />
-      <div className='page-content'>
-        <div className='filtros'>
-          <InputText
-            color='primary'
-            id='search'
-            placeholder='Nome da startup'
-            icon={MdSearch}
-            onInputChange={(evt) => filterStartupByText(evt)}
-          />
-          <Button
-            color={'primary'}
-            outline={category === 'Todos'}
-            onClickButton={() => onClickFilterByTag('Todos')}
-          >Todos</Button>
-          {
-            tags.length > 0 && tags.map((tag, index) => (
-              <Button
-                key={'tag'+index}
-                color={'primary'}
-                outline={category === tag}
-                onClickButton={() => onClickFilterByTag(tag)}
-              >{tag}</Button>
-            ))
-          }
-        </div>
-
-        <div className='vitrine'>
-          <div className='wrap'>
+      <section className='page-content'>
+        <section className='vitrine'>
+          <header className='filtros'>
+            <InputText
+              color='primary'
+              id='search'
+              placeholder='Nome da startup'
+              icon={MdSearch}
+              onInputChange={(evt) => filterStartupByText(evt)}
+            />
+            <Button
+              color={'primary'}
+              outline={category === 'Todos'}
+              onClickButton={() => onClickFilterByTag('Todos')}
+            >Todos</Button>
+            {
+              tags.length > 0 && tags.map((tag, index) => (
+                <Button
+                  key={'tag'+index}
+                  color={'primary'}
+                  outline={category === tag}
+                  onClickButton={() => onClickFilterByTag(tag)}
+                >{tag}</Button>
+              ))
+            }
+          </header>
+          
+          <section className='wrap'>
             {showStartups()}
-          </div>
-        </div>
+          </section>
+        </section>
 
         <Pagination
           totalPages={Math.floor(startups.length / pageSize)}
@@ -115,7 +113,7 @@ export default function Showcase() {
           page={page}
           onClickPageButton={onClickPageButton}
         />
-      </div>
+      </section>
     </div>
   );
 }
