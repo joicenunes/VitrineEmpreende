@@ -55,7 +55,11 @@ export default function Startup() {
                 Áreas de atuação
               </CardTitle>
               <CardBody>
-                <TagList color='primary' tags={startup?.tags ?? defaultStartup.tags} />
+                <TagList
+                  color='primary'
+                  outline
+                  tags={startup?.tags ?? defaultStartup.tags}
+                />
               </CardBody>
             </Card>
           </div>
