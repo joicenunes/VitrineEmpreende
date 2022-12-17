@@ -10,7 +10,7 @@ import InputText from '../../Components/InputText';
 import Pagination from '../../Components/Pagination';
 import StartupProfile from '../../Components/StartupProfile';
 
-export default function Vitrine() {
+export default function Showcase() {
   const fullList = startupList;
 
   const [pageSize,] = useState(6);
