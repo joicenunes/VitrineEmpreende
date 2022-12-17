@@ -28,7 +28,7 @@ export default function Header(props) {
             <Link to={`/management`}>
               <Avatar name={userName} />
             </Link> :
-            <Link to='/startup'>
+            <Link to='/login'>
               Entrar
             </Link>
           }
