@@ -1,0 +1,29 @@
+.filtros {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+}
+
+.filtros .form-item {
+  margin-top: -1em;
+}
+
+.startup-list {
+  display: grid;
+  grid-template-columns: 1fr 10fr 1fr;
+  grid-template-areas: '. wrap .';
+  gap: 20px;
+}
+
+.startup-list .wrap {
+  justify-content: center;
+  grid-area: wrap;
+}
+
+.startup-list .wrap .card .card-body {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+}

@@ -1,3 +1,9 @@
+let activity = [
+  'Atualizado',
+  'Inativo',
+  'Removido'
+];
+
 let tags = [
   'Transporte',
   'Imobiliário',
@@ -20,7 +26,8 @@ let startupList = Array(50).fill(0).map((_, i) => {
     name: `Startup Exemplo ${i + 1}`,
     email: 'startup@exemplo.com',
     tags: [tags[tagIndex]],
-    description: descriptions[tagIndex]
+    description: descriptions[tagIndex],
+    activity: activity[Math.floor(Math.random() * activity.length)]
   });
 });
 
