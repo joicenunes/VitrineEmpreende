@@ -1,27 +1,36 @@
 import React from 'react';
+import colorsMap from '../../Helper/colors';
 import './style.css';
 
 function Tag({ style, children }) {
   return (
-    <div
+    <button
+      disabled
       className='tag'
       style={style}
     >
       {children}
-    </div>
+    </button>
   )
 }
 
 export default function TagList(props) {
-  const setTagStyle = (color) => {
+  const setTagStyle = (color, outline) => {
     let style = {};
-    switch (color) {
-      case 'primary':
-        style.backgroundColor = '#2EBEE5';
+    
+    if (outline) {
+      style.backgroundColor = 'transparent';
+      style.borderStyle = 'solid';
+      style.borderWidth = '1px';
+      if (color) {
+        style.color = colorsMap[color];
+        style.borderColor = colorsMap[color];
+      }
+    } else {
+      if (color) {
         style.color = '#fff';
-        break;
-      default:
-        break;
+        style.backgroundColor = colorsMap[color];
+      }
     }
     return style;
   }
@@ -30,7 +39,7 @@ export default function TagList(props) {
     return props.tags.map((tag, i) =>
       <Tag
         key={i}
-        style={setTagStyle(props.color)}
+        style={setTagStyle(props.color, props.outline)}
       > {tag} </Tag>
     )
   }

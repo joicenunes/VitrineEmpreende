@@ -1,37 +1,25 @@
 import React from 'react';
-import './style.css';
+import colorsMap from '../../Helper/colors';
 
 export default function Button(props) {
   const setButtonStyle = () => {
     let style = {};
 
+    if (props.block) {
+      style.width = '100%';
+    }
     if (props.outline) {
       style.backgroundColor = 'transparent';
       style.borderStyle = 'solid';
       style.borderWidth = '1px';
-      switch (props.color) {
-        case 'primary':
-          style.color = '#2EBEE5';
-          style.borderColor = '#2EBEE5';
-          break;
-        case 'secondary':
-          style.color = '#9ea5b7';
-          style.borderColor = '#9ea5b7';
-          break;
-        default:
-          break;
+      if (props.color) {
+        style.color = colorsMap[props.color];
+        style.borderColor = colorsMap[props.color];
       }
     } else {
-      switch (props.color) {
-        case 'primary':
-          style.color = '#fff';
-          style.backgroundColor = '#2EBEE5';
-          break;
-        case 'secondary':
-          style.backgroundColor = '#9ea5b7';
-          break;
-        default:
-          break;
+      if (props.color) {
+        style.color = '#fff';
+        style.backgroundColor = colorsMap[props.color];
       }
     }
 
@@ -44,6 +32,7 @@ export default function Button(props) {
         style={setButtonStyle()}
         onClick={props.onClickButton}
         type='submit'
+        disabled={props.disabled}
       >
         { props.children }
       </button>
