@@ -1,55 +1,66 @@
 .access {
-  display: grid;
-  grid-template-columns: 8fr 4fr;
-  width: 100%;
-  height: 100vh;
-  text-align: center;
-  overflow: hidden;
+    display: grid;
+    grid-template-columns: 8fr 4fr;
+    width: 100%;
+    height: 100vh;
+    text-align: center;
+    overflow: hidden;
 }
 
 .access-image {
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .access-image-title {
-  color: #fff;
-  position: absolute;
-  width: 530px;
-  height: 216px;
-  left: 70px;
-  top: 73px;
-  text-align: left;
-  font-weight: 600;
-  font-size: 75px;
-  line-height: 75px;
+    color: #fff;
+    position: absolute;
+    width: 530px;
+    height: 216px;
+    left: 70px;
+    top: 73px;
+    text-align: left;
+    font-weight: 600;
+    font-size: 75px;
+    line-height: 75px;
 }
 
 .access-form {
-  padding: 60px 40px 25px;
-  background-color: #f7f7f7;
-  overflow: auto;
+    align-content: center;
+    padding: 140px 40px 25px;
+    background-color: #f7f7f7;
+    overflow: auto;
 }
 
 .access-form .form-button button {
-  margin: 30px 0 !important;
+    margin: 30px 0 !important;
 }
 
 .access-fields .form-item {
-  margin: 30px 0;
+    margin: 30px 0;
 }
 
 .form-links {
-  text-align: left;
+    text-align: left;
+}
+
+.logo {
+    width: 60px;
+    height: 60px;
+}
+
+.logo-empreende {
+    width: auto;
+    height: 80px;
+    position: absolute;
 }
 
 @media screen and (max-width: 1024px) {
-  .access-image {
-    display:none;
-  }
-
-  .access-form {
-    width: 100%;
-  }
+    .access-image {
+        display: none;
+    }
+    .access-form {
+        width: 100%;
+    }
 }
