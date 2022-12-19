@@ -5,6 +5,7 @@ let activity = [
 ];
 
 let tags = [
+  'Todos',
   'Transporte',
   'Imobiliário',
   'Suporte',

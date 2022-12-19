@@ -1,18 +1,18 @@
-import React, { /* useEffect, */ useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './style.css';
 
 import { startupList, tags } from '../../Helper/startupsMock';
 
-import { MdSearch } from 'react-icons/md';
 import Button from '../../Components/Button';
 import { Card, CardBody } from '../../Components/Card';
-import InputText from '../../Components/InputText';
 import Pagination from '../../Components/Pagination';
+import StartupsFilter from '../../Components/StartupsFilter';
 import TagList from '../../Components/TagList';
 import { Link } from 'react-router-dom';
 
 export default function Management() {
   const fullList = startupList;
+  const categories = tags;
 
   const [pageSize,] = useState(6);
   const [page, setPage] = useState(1);
@@ -23,8 +23,7 @@ export default function Management() {
   const [filter, setFilter] = useState('');
   const [startups, setStartups] = useState([]);
 
-    /* TODO: componentizar filtros */
-    useEffect(_ => {
+  useEffect(_ => {
     let list = fullList;
     if (filter.length > 0) {
       list = list.filter(startup =>
@@ -36,7 +35,7 @@ export default function Management() {
         startup.tags.includes(category)
       );
     }
-    
+
     setTotalPages(Math.floor(list.length / pageSize));
 
     setStartups(list.slice((page - 1) * pageSize, page * pageSize));
@@ -87,48 +86,28 @@ export default function Management() {
     setPage(newPage);
   }
 
-  const onClickFilterByTag = (tag) => {
-    setCategory(tag);
-    setPage(1);
-  }
-
-  const filterStartupByText = (evt) => {
+  const onSearchByText = (text) => {
     clearTimeout(typeCounter);
     setTypeCounter(
-      setTimeout(() => setFilter(evt.target.value), 1000)
+      setTimeout(() => setFilter(text), 1000)
     );
+  }
+
+  const onFilterByCategory = (category) => {
+    setCategory(category);
+    setPage(1);
   }
 
   return (
     <>
-      {/* <Header /> */}
       <section className='page-content'>
         <section className='startup-list'>
-          {/* TODO: componentizar filtros */}
-          <header className='filtros'>
-            <InputText
-              color='primary'
-              id='search'
-              placeholder='Nome da startup'
-              icon={MdSearch}
-              onInputChange={(evt) => filterStartupByText(evt)}
-            />
-            <Button
-              color={'primary'}
-              outline={category === 'Todos'}
-              onClickButton={() => onClickFilterByTag('Todos')}
-            >Todos</Button>
-            {
-              tags.length > 0 && tags.map((tag, index) => (
-                <Button
-                  key={'tag' + index}
-                  color={'primary'}
-                  outline={category === tag}
-                  onClickButton={() => onClickFilterByTag(tag)}
-                >{tag}</Button>
-              ))
-            }
-          </header>
+          <StartupsFilter
+            onSearchByText={(text) => onSearchByText(text)}
+            categories={categories}
+            selectedCategory={category}
+            onSelectCategory={(selectedCategory) => onFilterByCategory(selectedCategory)}
+          />
 
           <section className='wrap'>
             {showStartups()}
