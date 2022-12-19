@@ -38,3 +38,7 @@
   pointer-events: none;
   background-color: inherit;
 }
+
+.pagination button.pagination-button:disabled {
+  color: #C7C7C7;
+}

@@ -5,19 +5,6 @@
   place-items: center;
 }
 
-.filtros {
-  grid-area: filter;
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  place-self: center start;
-  gap: 16px;
-}
-
-.filtros .form-item {
-  margin-top: -1em;
-}
-
 .vitrine .wrap {
   justify-content: center;
   grid-area: wrap;
