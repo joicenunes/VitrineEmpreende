@@ -36,7 +36,8 @@ export default function Management() {
       );
     }
 
-    setTotalPages(Math.floor(list.length / pageSize));
+    let numberOfPages = Math.floor(list.length / pageSize);
+    setTotalPages(numberOfPages < 1 ? 1 : numberOfPages);
 
     setStartups(list.slice((page - 1) * pageSize, page * pageSize));
   }, [fullList, page, pageSize, category, filter]);

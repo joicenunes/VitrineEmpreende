@@ -1,10 +1,11 @@
 import { memo, useEffect, useState } from 'react';
 
-function PaginationButton({ onClickNumberButton, active, number }) {
+function PaginationButton({ onClickNumberButton, active, number, disabled }) {
   return (
     <button
       className={`pagination-button ${active ? 'active' : ''}`}
       onClick={() => onClickNumberButton(number)}
+      disabled={disabled}
     >
       {number}
     </button>
@@ -34,6 +35,7 @@ const Buttons = ({ onClickNumberButton, currentPage, maxButtonsVisible, totalPag
             let number = i + firstButton;
             return (
               <PaginationButton
+                disabled={ number > totalPages }
                 key={number}
                 onClickNumberButton={onClickNumberButton}
                 number={number}
