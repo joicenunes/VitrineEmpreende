@@ -1,0 +1,12 @@
+.startup-filter {
+  grid-area: filter;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  place-self: center start;
+  gap: 16px;
+}
+
+.startup-filter .form-item {
+  margin-top: -1em;
+}
